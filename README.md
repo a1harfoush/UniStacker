@@ -29,8 +29,8 @@ This project is built using the following technologies:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your-repository-url>
-    cd UniStackerWebApp
+    git https://github.com/a1harfoush/UniStalke
+    cd UniStalker
     ```
 
 2.  **Create and Activate a Python Virtual Environment:**
@@ -53,10 +53,11 @@ This project is built using the following technologies:
         pip install -r requirements.txt
         ```
 
-4.  **Download Microsoft Edge WebDriver:**
-    *   This script uses Selenium with Microsoft Edge. You need the corresponding `msedgedriver.exe`.
-    *   Download the correct version for your Edge browser installation from the official site: [Microsoft Edge WebDriver Downloads](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
-    *   **Important:** Place the downloaded `msedgedriver.exe` file inside the `backend/` directory within the `UniStackerWebApp` folder.
+4. **Download WebDriver (Microsoft Edge or Chrome):**
+    * This script uses Selenium with either Microsoft Edge or Google Chrome. Download the driver that matches your browser:
+      - For Edge: [Microsoft Edge WebDriver Downloads](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
+      - For Chrome: [ChromeDriver Downloads](https://sites.google.com/chromium.org/driver/)
+    * **Important:** Place the downloaded WebDriver (`msedgedriver.exe` or `chromedriver.exe`) inside the `backend/` directory within the `UniStalker` folder.
 
 5.  **Get Captcha API Key:**
     *   Sign up or log in at [FreeCaptchaBypass](https://freecaptchabypass.com/cp/index).
@@ -73,7 +74,7 @@ This project is built using the following technologies:
 1.  **Ensure your virtual environment is active.**
 2.  **Make sure `msedgedriver.exe` is in the `backend/` directory.**
 3.  **Start the FastAPI server:**
-    *   From the `UniStackerWebApp` root directory, run:
+    *   From the `UniStalker` root directory, run:
         ```bash
         python -m uvicorn backend.main:app --reload --port 8000 --workers 1
         ```
