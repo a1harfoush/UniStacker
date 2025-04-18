@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniStacker - DULMS Scraper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DULMS Course Scraper</h1>
+        <p>Enter your DULMS credentials, Captcha API key, and optionally a Discord webhook to get your assignments and quizzes.</p>
+
+        <form id="scraper-form">
+            <div class="form-group">
+                <label for="username">DULMS Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">DULMS Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="captcha-api-key">Captcha API Key (<a href="https://freecaptchabypass.com/cp/index" target="_blank" rel="noopener noreferrer">FreeCaptchaBypass</a>):</label>
+                <input type="text" id="captcha-api-key" name="captcha_api_key" required>
+                <small>Get your key from <a href="https://freecaptchabypass.com/cp/index" target="_blank" rel="noopener noreferrer">freecaptchabypass.com</a>.</small>
+            </div>
+            <div class="form-group">
+                <label for="discord-webhook">Discord Webhook URL (Optional):</label>
+                <input type="url" id="discord-webhook" name="discord_webhook">
+                <details>
+                    <summary>How to get a Discord Webhook URL?</summary>
+                    <ol>
+                        <li>Open Discord and go to the server where you want notifications.</li>
+                        <li>Go to Server Settings > Integrations > Webhooks.</li>
+                        <li>Click "New Webhook".</li>
+                        <li>Give it a name (e.g., "DULMS Alerts") and choose a channel.</li>
+                        <li>Click "Copy Webhook URL".</li>
+                        <li>Paste the URL here.</li>
+                    </ol>
+                </details>
+            </div>
+            <button type="submit" id="run-button">Run Scraper</button>
+        </form>
+
+        <div id="status-message" class="status"></div>
+
+        <h2>Logs</h2>
+        <div id="log-output" class="log-container">
+            <!-- Logs will be streamed here -->
+        </div>
+
+        <h2>Results</h2>
+        <div id="results-output" class="results-container">
+            <!-- Scraped data will be displayed here -->
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+selenium
+requests
+python-dotenv
+sse-starlette
+pillow
