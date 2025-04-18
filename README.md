@@ -2,6 +2,11 @@
 
 This application provides a web interface to scrape assignment and quiz data from the DULMS (Delta University Learning Management System) website. It displays the scraped data grouped by course and can optionally send upcoming deadline alerts to Discord.
 
+![image](https://github.com/user-attachments/assets/166e685d-40c8-4e6f-ac6f-e7fc8b3651f3)
+
+![FireShot Capture 042 - UniStacker - DULMS Scraper -  127 0 0 1](https://github.com/user-attachments/assets/d1bfd828-d40b-4512-a1f8-fc972d359bfa)
+
+
 ## Features
 
 *   Web-based interface for easy input of credentials.
