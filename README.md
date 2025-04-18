@@ -1,4 +1,4 @@
-# UniStacker WebApp - DULMS Scraper
+# UniStalker WebApp - DULMS Scraper
 
 This application provides a web interface to scrape assignment and quiz data from the DULMS (Delta University Learning Management System) website. It displays the scraped data grouped by course and can optionally send upcoming deadline alerts to Discord.
 
@@ -93,7 +93,7 @@ This project is built using the following technologies:
 ## Project Structure
 
 ```
-UniStackerWebApp/
+UniStalker/
 ├── backend/
 │   ├── __pycache__/
 │   ├── dulms_public.py # Refactored Selenium scraper logic
