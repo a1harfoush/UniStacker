@@ -14,6 +14,17 @@ This application provides a web interface to scrape assignment and quiz data fro
 *   Uses [FreeCaptchaBypass](https://freecaptchabypass.com/cp/index) API to solve CAPTCHAs.
 *   (Optional) Sends upcoming deadline notifications via Discord webhook.
 
+
+## Tech Stack
+
+This project is built using the following technologies:
+
+- **Backend**: Python (FastAPI), Selenium
+- **Frontend**: HTML, CSS, JavaScript
+- **Automation**: Microsoft Edge WebDriver
+- **APIs**: FreeCaptchaBypass API
+- **Optional Notifications**: Discord Webhook
+
 ## Setup Instructions
 
 1.  **Clone the Repository:**
