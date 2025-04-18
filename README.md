@@ -92,7 +92,6 @@ UniStackerWebApp/
 │   └── style.css       # CSS styling
 ├── .venv/              # Virtual environment (ignored by git)
 ├── .gitignore          # Specifies intentionally untracked files
-├── plan.md             # Development plan document
 ├── README.md           # This file
 └── requirements.txt    # Python dependencies
 ```
