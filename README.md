@@ -29,7 +29,7 @@ This project is built using the following technologies:
 
 1.  **Clone the Repository:**
     ```bash
-    git https://github.com/a1harfoush/UniStalke
+    git https://github.com/a1harfoush/UniStalker
     cd UniStalker
     ```
 
