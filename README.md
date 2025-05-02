@@ -17,6 +17,7 @@ This application provides a web interface to scrape assignment and quiz data fro
 
 ## Ongoing Development 🛠️
 
+- [x] Deploy the application online at [https://unistalker-production.up.railway.app/](https://unistalker-production.up.railway.app/) 🌍
 - [ ] Scheduling automated notifications for upcoming deadlines ⏰
 - [ ] Expanding notification support to additional platforms (e.g., WhatsApp, SMS) 📱
 - [ ] Improving and updating the user interface for better usability 🎨
