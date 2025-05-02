@@ -1,11 +1,12 @@
-# UniStalker WebApp - DULMS Scraper
+# UniStalker WebApp - DULMS Scraper 🚀
 
-This application provides a web interface to scrape assignment and quiz data from the DULMS (Delta University Learning Management System) website. It displays the scraped data grouped by course and can optionally send upcoming deadline alerts to Discord.
+Try it out at: [https://unistalker-production.up.railway.app/](https://unistalker-production.up.railway.app/) 🌐
+
+This application provides a web interface to scrape assignment and quiz data from the DULMS (Delta University Learning Management System) website. It displays the scraped data grouped by course and can optionally send upcoming deadline alerts to Discord. 📚
 
 ![image](https://github.com/user-attachments/assets/166e685d-40c8-4e6f-ac6f-e7fc8b3651f3)
 
-
-## Features
+## Features ✨
 
 *   Web-based interface for easy input of credentials.
 *   Scrapes assignments and quizzes from DULMS.
@@ -14,8 +15,13 @@ This application provides a web interface to scrape assignment and quiz data fro
 *   Uses [FreeCaptchaBypass](https://freecaptchabypass.com/cp/index) API to solve CAPTCHAs.
 *   (Optional) Sends upcoming deadline notifications via Discord webhook.
 
+## Ongoing Development 🛠️
 
-## Tech Stack
+- [ ] Scheduling automated notifications for upcoming deadlines ⏰
+- [ ] Expanding notification support to additional platforms (e.g., WhatsApp, SMS) 📱
+- [ ] Improving and updating the user interface for better usability 🎨
+
+## Tech Stack 🧑‍💻
 
 This project is built using the following technologies:
 
@@ -25,11 +31,11 @@ This project is built using the following technologies:
 - **APIs**: FreeCaptchaBypass API
 - **Optional Notifications**: Discord Webhook
 
-## Setup Instructions
+## Setup Instructions 📋
 
 1.  **Clone the Repository:**
     ```bash
-    git https://github.com/a1harfoush/UniStalker
+    git clone https://github.com/a1harfoush/UniStalker
     cd UniStalker
     ```
 
@@ -69,7 +75,7 @@ This project is built using the following technologies:
         *   Click "New Webhook", give it a name (e.g., "DULMS Alerts"), choose a channel.
         *   Click "Copy Webhook URL".
 
-## Running the Application
+## Running the Application ▶️
 
 1.  **Ensure your virtual environment is active.**
 2.  **Make sure `msedgedriver.exe` is in the `backend/` directory.**
@@ -91,7 +97,7 @@ This project is built using the following technologies:
     *   Click "Run Scraper".
     *   Observe the logs and wait for the results to appear.
 
-## Project Structure
+## Project Structure 📂
 
 ```
 UniStalker/
@@ -111,8 +117,7 @@ UniStalker/
 └── requirements.txt    # Python dependencies
 ```
 
-## Notes
+## Notes 📝
 
-*   Storing passwords directly is generally insecure. Consider using environment variables or a more secure configuration method for production use.
 *   The scraper relies on the specific HTML structure of the DULMS website. Changes to the website may break the scraper.
 *   The `msedgedriver.exe` version must match your installed Microsoft Edge browser version.
