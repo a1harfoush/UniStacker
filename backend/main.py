@@ -21,6 +21,11 @@ BACKEND_DIR = Path(__file__).parent
 # Get the parent directory (UniStackerWebApp)
 PROJECT_DIR = BACKEND_DIR.parent
 FRONTEND_DIR = PROJECT_DIR / "frontend"
+LOGS_DIR = BACKEND_DIR / "logs" # Define log directory
+LOG_FILE_PATH = LOGS_DIR / "app.log" # Define log file path
+
+# Ensure Log Directory Exists
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE_PATH = BACKEND_DIR / "app.log"
 
 # --- Logging Setup (Basic for now, will enhance for SSE) ---

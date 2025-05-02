@@ -1,3 +1,17 @@
+# Logger configuration at the very top of the file
+import logging
+import sys
+
+# Configure logging before any logging calls
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
 import selenium
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
@@ -19,19 +33,29 @@ import io
 import time
 import requests
 import os
-import logging
 import logging.handlers # Added for QueueHandler
 import json
 from datetime import datetime, timedelta
 import traceback
 import queue # Added for log queue
 from pathlib import Path # Added for path handling
+import platform # For OS detection
 
 # --- Constants (Derived from original CONFIG) ---
 # Using constants instead of a CONFIG dict within this module
 # Construct absolute path assuming driver is in the same directory as this script
 _SCRIPT_DIR = Path(__file__).parent
-DRIVER_PATH = str(_SCRIPT_DIR / "msedgedriver.exe") # More robust path
+
+# Determine driver path based on OS - prioritize Linux path for Docker
+if platform.system() == "Linux":
+    # Standard path where we install it in the Dockerfile
+    DRIVER_PATH = "/usr/local/bin/msedgedriver"
+    logger.info(f"Detected Linux system, using WebDriver path: {DRIVER_PATH}")
+else:
+    # Fallback to Windows path (for local development outside Docker)
+    DRIVER_PATH = str(_SCRIPT_DIR / "msedgedriver.exe")
+    logger.info(f"Detected non-Linux system ({platform.system()}), using WebDriver path: {DRIVER_PATH}")
+
 LOGIN_URL = "https://dulms.deltauniv.edu.eg/Login.aspx"
 QUIZZES_URL = "https://dulms.deltauniv.edu.eg/Quizzes/StudentQuizzes"
 ASSIGNMENTS_URL = "https://dulms.deltauniv.edu.eg/Assignment/AssignmentStudentList"
@@ -70,9 +94,11 @@ def initialize_driver(headless=True):
         driver_executable_path = Path(DRIVER_PATH)
         if not driver_executable_path.is_file():
              logger.error(f"WebDriver executable not found at specified path: {DRIVER_PATH}")
-             raise FileNotFoundError(f"WebDriver executable not found at: {DRIVER_PATH}")
-
-        service = Service(executable_path=str(driver_executable_path)) # Use the absolute path
+             # Try initializing without explicit path, relying on system PATH
+             logger.warning("WebDriver not found at specified path. Attempting to locate via system PATH")
+             service = Service()
+        else:
+            service = Service(executable_path=str(driver_executable_path)) # Use the determined path
         driver = webdriver.Edge(service=service, options=options)
         logger.info("Driver initialized successfully.")
         return driver

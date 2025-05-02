@@ -1,0 +1,57 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Python virtual environment
+.venv
+venv
+env
+*.venv
+*.env
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# Python development/testing artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# IDE configuration files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files (volume mapping handles persistence)
+*.log
+backend/logs/*
+!backend/logs/.gitkeep
+
+# Local Windows WebDriver executable (not needed in Linux image)
+backend/msedgedriver.exe
+
+# Documentation / Project files not needed in image
+*.md
+LICENSE
+plan.md
+README.md
+
+# Screenshots if generated
+*.png
