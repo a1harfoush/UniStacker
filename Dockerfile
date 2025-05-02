@@ -21,6 +21,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
+# Download Edge driver and place it in backend folder
+RUN mkdir -p /app/backend && \
+    python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; import shutil; driver_path = EdgeChromiumDriverManager().install(); shutil.copy(driver_path, '/app/backend/edgedriver')" && \
+    chmod +x /app/backend/edgedriver
+
 # Expose the port Railway expects
 EXPOSE $PORT
 
